@@ -16,4 +16,7 @@
 # limitations under the License.
 #
 
+default['symlink']['user'] = ''
+default['symlink']['group'] = ''
+default['symlink']['link_type'] = :symbolic
 default['symlink']['links'] = {}

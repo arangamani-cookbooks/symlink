@@ -18,7 +18,11 @@
 #
 
 node['symlink']['links'].each do |link_from, link_to|
- link from do
-   to link_to
+  log "Linking #{link_from} >> #{link_to}"
+  link from do
+    owner node['symlink']['user'] unless node['symlink']['user'].empty?
+    group node['symlink']['group'] unless node['symlink']['group'].empty?
+    link_type node['symlink']['link_type']
+    to link_to
  end
 end
